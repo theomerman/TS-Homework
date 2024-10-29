@@ -1,0 +1,20 @@
+name: Display Variable in console
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  display-variable-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set and display Variable
+        run: |
+          echo "My custom variable is: $MY_VARIABLE"
+
+        env:
+          MY_VARIABLE: my_var123
